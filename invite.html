@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evandel Bot — Convidar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --text: #e0e0e8;
+      --text-dim: #8888a0;
+      --accent: #7c5cfc;
+      --accent-glow: rgba(124, 92, 252, 0.25);
+      --accent2: #00d4aa;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(124,92,252,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,92,252,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 440px;
+      width: 90%;
+      transition: border-color 0.3s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .logo-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+    .logo-text {
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .feature {
+      font-size: 13px;
+      color: var(--text-dim);
+      padding: 10px 14px;
+      background: rgba(124, 92, 252, 0.05);
+      border: 1px solid rgba(124, 92, 252, 0.1);
+      border-radius: 10px;
+    }
+    .feature span { color: var(--accent2); }
+    .btn {
+      display: inline-block;
+      padding: 16px 48px;
+      background: linear-gradient(135deg, var(--accent), #5c3cdc);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 14px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 24px var(--accent-glow);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
+    .links {
+      margin-top: 24px;
+      font-size: 13px;
+    }
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .links a:hover { text-decoration: underline; }
+    @media (max-width: 500px) {
+      .card { padding: 36px 24px; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🤖</div>
+      <span class="logo-text">Evandel</span>
+    </div>
+    <p class="subtitle">Bot de IA + Música para Discord.<br>Adicione no seu servidor!</p>
+    <div class="features">
+      <div class="feature"><span>💬</span> Chat com IA (Groq)</div>
+      <div class="feature"><span>🎵</span> Música completa</div>
+      <div class="feature"><span>♾️</span> Modo 24/7</div>
+      <div class="feature"><span>🔄</span> Auto-play</div>
+      <div class="feature"><span>🔨</span> Moderação</div>
+      <div class="feature"><span>🌈</span> Gaydar</div>
+    </div>
+    <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1538716876350427156&permissions=8&scope=bot+applications.commands">
+      Adicionar ao Discord
+    </a>
+    <p class="note">Requer permissão de gerenciar servidor</p>
+    <div class="links">
+      <a href="https://umbra138.github.io/evandel-terms/">Termos</a>
+      <a href="https://umbra138.github.io/evandel-terms/privacy.html">Privacidade</a>
+    </div>
+  </div>
+</body>
+</html>
