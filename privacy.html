@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evandel Bot — Política de Privacidade</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --text: #e0e0e8;
+      --text-dim: #8888a0;
+      --accent: #7c5cfc;
+      --accent-glow: rgba(124, 92, 252, 0.25);
+      --accent2: #00d4aa;
+      --accent2-glow: rgba(0, 212, 170, 0.2);
+      --red: #ff4466;
+      --yellow: #ffcc33;
+      --blue: #4488ff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(124,92,252,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,92,252,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    .logo-text {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    header .updated {
+      font-size: 13px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      opacity: 0.6;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.3s;
+    }
+
+    section:hover {
+      border-color: var(--accent);
+    }
+
+    section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 2px 10px;
+      border-radius: 6px;
+    }
+
+    p, li {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    p:last-child, li:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      background: rgba(124, 92, 252, 0.1);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 5px;
+      border: 1px solid rgba(124, 92, 252, 0.15);
+    }
+
+    .highlight {
+      border-left: 3px solid var(--accent2);
+      padding-left: 16px;
+      background: rgba(0, 212, 170, 0.04);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 16px 16px 19px;
+      margin-top: 16px;
+    }
+
+    .highlight p { color: var(--accent2); margin: 0; }
+
+    .warn {
+      border-left: 3px solid var(--red);
+      padding-left: 16px;
+      background: rgba(255, 68, 102, 0.04);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 16px 16px 19px;
+      margin-top: 16px;
+    }
+
+    .warn p { color: var(--red); margin: 0; }
+
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      font-size: 13px;
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 40px 16px 60px; }
+      section { padding: 24px 20px; }
+      .logo-text { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🤖</div>
+        <span class="logo-text">Evandel</span>
+      </div>
+      <h1>Política de Privacidade</h1>
+      <span class="updated">Última atualização: 16 de agosto de 2026</span>
+    </header>
+
+    <section>
+      <h2><span class="num">01</span> Introdução</h2>
+      <p>A presente Política de Privacidade descreve como a <strong>Evandel Bot</strong> coleta, usa e protege dados ao operar dentro de servidores do Discord. Ao adicionar ou interagir com a bot, você concorda com as práticas descritas aqui.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">02</span> Dados Coletados</h2>
+      <p>A Evandel coleta apenas os dados estritamente necessários para seu funcionamento:</p>
+      <ul>
+        <li><strong>ID do usuário</strong> — identificador único do Discord, usado para responder a comandos e gerenciar permissões</li>
+        <li><strong>ID do servidor e canais</strong> — para operar em canais de voz e garantir que comandos funcionem no contexto correto</li>
+        <li><strong>Conteúdo de mensagens</strong> — processado apenas quando a bot é mencionada ou quando um comando é ativado</li>
+        <li><strong>Dados de áudio temporários</strong> — durante reprodução em canais de voz, áudio é processado em tempo real e <strong>não é armazenado</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">03</span> Dados NÃO Coletados</h2>
+      <p>A Evandel <strong>não coleta</strong>:</p>
+      <ul>
+        <li>Nomes, e-mails ou informações pessoais fora do Discord</li>
+        <li>Histórico completo de mensagens do servidor</li>
+        <li>IPs, localizações ou dados de dispositivos</li>
+        <li>Dados de pagamento ou informações financeiras</li>
+        <li>Cookies ou identificadores de rastreamento</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">04</span> Uso dos Dados</h2>
+      <p>Os dados coletados são utilizados exclusivamente para:</p>
+      <ul>
+        <li>Processar e responder a comandos enviados pelo usuário</li>
+        <li>Gerenciar conexões em canais de voz</li>
+        <li>Manter o funcionamento adequado da bot</li>
+      </ul>
+      <div class="highlight">
+        <p>Os dados não são usados para publicidade, análise comportamental ou qualquer finalidade comercial.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">05</span> Armazenamento e Retenção</h2>
+      <p>A Evandel <strong>não armazena dados permanentemente</strong>. Todo processamento ocorre em tempo e os dados são descartados imediatamente após o uso. Músicas baixadas temporariamente (via YouTube) são removidas do disco após cada reprodução.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">06</span> Compartilhamento com Terceiros</h2>
+      <p>Os dados da Evandel <strong>não são vendidos, compartilhados ou transmitidos</strong> a terceiros, exceto nos seguintes casos:</p>
+      <ul>
+        <li><strong>API da Groq</strong> — mensagens mencionando a bot são enviadas à API de IA para gerar respostas. A Groq possui sua própria <a href="https://groq.com/privacy/" target="_blank" style="color:var(--accent);">política de privacidade</a></li>
+        <li><strong>YouTube / Jamendo / iTunes</strong> — buscas por músicas são feitas diretamente, sem enviar dados pessoais do usuário</li>
+        <li><strong>Exigência legal</strong> — em caso de ordem judicial ou obrigação legal</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">07</span> Segurança</h2>
+      <p>A Evandel utiliza práticas básicas de segurança:</p>
+      <ul>
+        <li>Tokens e chaves de API são armazenados em variáveis de ambiente (não no código)</li>
+        <li>Conexões com a API do Discord utilizam HTTPS</li>
+        <li>Nenhum dado sensível é registrado em logs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">08</span> Direitos do Usuário</h2>
+      <p>Como usuário, você tem direito a:</p>
+      <ul>
+        <li><strong>Remover a bot</strong> do servidor a qualquer momento — todos os dados associados são descartados imediatamente</li>
+        <li><strong>Solicitar esclarecimentos</strong> sobre quais dados são processados</li>
+        <li><strong>Interromper a interação</strong> simplesmente deixando de mencionar a bot ou usar seus comandos</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">09</span> Menções e Chat com IA</h2>
+      <p>Quando você menciona a Evandel ou envia um comando, o conteúdo da mensagem é enviado à API da Groq para gerar uma resposta. Essa mensagem:</p>
+      <ul>
+        <li>É processada uma única vez e descartada</li>
+        <li>Não é armazenada em banco de dados</li>
+        <li>Não é associada ao seu perfil de forma permanente</li>
+      </ul>
+      <div class="warn">
+        <p>Recomenda-se não enviar dados pessoais sensíveis em mensagens destinadas à bot.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span> Serviços de Terceiros</h2>
+      <p>A Evandel utiliza serviços externos que possuem suas próprias políticas de privacidade:</p>
+      <ul>
+        <li><a href="https://discord.com/privacy" target="_blank" style="color:var(--accent);">Discord — Política de Privacidade</a></li>
+        <li><a href="https://groq.com/privacy/" target="_blank" style="color:var(--accent);">Groq — Política de Privacidade</a></li>
+        <li><a href="https://www.jamendo.com/start/legal" target="_blank" style="color:var(--accent);">Jamendo — Termos e Privacidade</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">11</span> Alterações nesta Política</h2>
+      <p>Esta política pode ser atualizada a qualquer momento. Alterações significativas serão comunicadas no servidor de suporte da bot, quando disponível.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">12</span> Contato</h2>
+      <p>Em caso de dúvidas sobre privacidade ou dados, entre em contato pelo servidor de suporte do Discord ou abra uma <a href="https://github.com/umbra138/Koko/issues" target="_blank" style="color:var(--accent);">issue no GitHub</a>.</p>
+    </section>
+
+    <footer>
+      Evandel Bot &copy; 2026 — Desenvolvido com 💜
+    </footer>
+
+  </div>
+</body>
+</html>
